@@ -36,6 +36,14 @@ elif difficulty == "4":
 else:
   print("\nError: invalid input. Please enter a number between 1 and 4.")
 
+# Prompt the user for their guess and continue until correct
 while True:
-  user_guess = int(input(f"Enter a number {instructions}"))
-  break
+  user_number = int(input(f"\nEnter a number {instructions}"))
+
+  if user_number < computer_number:
+    print("Higher!")
+  elif user_number > computer_number:
+    print("Lower!")
+  else:
+    print("Correct!")
+    break
