@@ -54,7 +54,7 @@ while active:
     elif user_number > computer_number:
       print("Lower!")
     else:
-      print("Correct!")
+      print("\nCorrect!")
       break
 
   # Check if guesses should be plural
@@ -64,12 +64,12 @@ while active:
     print(f"It took you {guess_count} guesses.")
 
   # Prompt the user if they'd like to play again
-  play_again = input("Would you like to play again (y/n)? ")
+  play_again = input("\nWould you like to play again (y/n)? ")
 
   if play_again.lower() == "n":
-    print("\nThanks for playing! Goodbye.\n")
+    print("Thanks for playing! Goodbye.\n")
     active = False
   elif play_again.lower() == "y":
-    print("\nStarting game...")
+    print("Starting game...")
   else:
     print("\nError: invalid input. Please enter y/n.")
