@@ -2,6 +2,9 @@ import random
 
 print("\nWelcome to the Number Guessing Game!")
 
+# Set initial guess count to 0
+guess_count = 0
+
 # Prompt user for difficulty level (Easy 1-10, 
 # Medium 1-50, Hard 1-100, Expert 1-1000)
 print("\nDifficulty Levels:")
@@ -39,6 +42,7 @@ else:
 # Prompt the user for their guess and continue until correct
 while True:
   user_number = int(input(f"\nEnter a number {instructions}"))
+  guess_count += 1
 
   if user_number < computer_number:
     print("Higher!")
@@ -47,3 +51,9 @@ while True:
   else:
     print("Correct!")
     break
+
+# Check if guesses should be plural
+if guess_count == 1:
+  print(f"It took you {guess_count} guess.")
+else:
+  print(f"It took you {guess_count} guesses.")
