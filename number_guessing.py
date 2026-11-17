@@ -104,7 +104,3 @@ while active:
     
     else:
       print("\nError: invalid input. Please enter y/n.")
-
-# TODO
-# Add error handling - program shouldn't end on invalid input
-# Enforce integer input (no floats)?
