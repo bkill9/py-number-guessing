@@ -70,8 +70,10 @@ while active:
 
         if user_number < computer_number:
           print("Higher!")
+        
         elif user_number > computer_number:
           print("Lower!")
+        
         else:
           print("\nCorrect!")
           break
@@ -85,16 +87,23 @@ while active:
   else:
     print(f"It took you {guess_count} guesses.")
 
-  # Prompt the user if they'd like to play again
-  play_again = input("\nWould you like to play again (y/n)? ")
+  # Loop until valid input is received
+  while True:
 
-  if play_again.lower() == "n":
-    print("Thanks for playing! Goodbye.\n")
-    active = False
-  elif play_again.lower() == "y":
-    print("Starting game...")
-  else:
-    print("\nError: invalid input. Please enter y/n.")
+    # Prompt the user if they'd like to play again
+    play_again = input("\nWould you like to play again (y/n)? ")
+
+    if play_again.lower() == "n":
+      print("Thanks for playing! Goodbye.\n")
+      active = False
+      break
+    
+    elif play_again.lower() == "y":
+      print("Starting game...")
+      break
+    
+    else:
+      print("\nError: invalid input. Please enter y/n.")
 
 # TODO
 # Add error handling - program shouldn't end on invalid input
