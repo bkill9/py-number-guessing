@@ -25,29 +25,25 @@ while active:
 
       difficulty = int(input("Enter the difficulty level you wish to play on: "))
 
-      # Check input and set random numbers
+      # Check input and set the cap number (ex. Easy the cap = 10)
       if difficulty == 1:
         print("\nDifficulty set to Easy. Good luck!")
-        instructions = "between 1 and 10: "
-        computer_number = random.randint(1, 10)
+        cap = 10
         break
 
       elif difficulty == 2:
         print("\nDifficulty set to Medium. Good luck!")
-        instructions = "between 1 and 50: "
-        computer_number = random.randint(1, 50)
+        cap = 50
         break
 
       elif difficulty == 3:
         print("\nDifficulty set to Hard. Good luck!")
-        instructions = "between 1 and 100: "
-        computer_number = random.randint(1, 100)
+        cap = 100
         break
 
       elif difficulty == 4:
         print("\nDifficulty set to Expert. Good luck!")
-        instructions = "between 1 and 1000: "
-        computer_number = random.randint(1, 1000)
+        cap = 1000
         break
 
       else:
@@ -56,18 +52,32 @@ while active:
     except ValueError:
       print("\nError: invalid input. Please enter a number between 1 and 4.")
 
+  # Set the computer number based on difficulty
+  computer_number = random.randint(1, cap)
+
   # Prompt the user for their guess and continue until correct
   while True:
-    user_number = int(input(f"\nEnter a number {instructions}"))
-    guess_count += 1
 
-    if user_number < computer_number:
-      print("Higher!")
-    elif user_number > computer_number:
-      print("Lower!")
-    else:
-      print("\nCorrect!")
-      break
+    try:
+      
+      user_number = int(input(f"\nEnter a number 1 and {cap}: "))
+
+      # Ensure the guess is in range (no negatives and not greater than the cap)
+      if user_number > cap or user_number < 1:
+        print("\nYour guess is out of range. Try again.")
+      else:
+        guess_count += 1
+
+        if user_number < computer_number:
+          print("Higher!")
+        elif user_number > computer_number:
+          print("Lower!")
+        else:
+          print("\nCorrect!")
+          break
+
+    except ValueError:
+      print(f"\nError: invalid input. Please enter a number between 1 and {cap}.")
 
   # Check if guesses should be plural
   if guess_count == 1:
