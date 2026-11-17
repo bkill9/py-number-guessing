@@ -47,10 +47,10 @@ while active:
         break
 
       else:
-        print("\nError: invalid input. Please enter a number between 1 and 4.")
+        print("\nError: invalid input. Please enter a whole number between 1 and 4.")
 
     except ValueError:
-      print("\nError: invalid input. Please enter a number between 1 and 4.")
+      print("\nError: invalid input. Please enter a whole number between 1 and 4.")
 
   # Set the computer number based on difficulty
   computer_number = random.randint(1, cap)
@@ -79,7 +79,7 @@ while active:
           break
 
     except ValueError:
-      print(f"\nError: invalid input. Please enter a number between 1 and {cap}.")
+      print(f"\nError: invalid input. Please enter a whole number between 1 and {cap}.")
 
   # Check if guesses should be plural
   if guess_count == 1:
